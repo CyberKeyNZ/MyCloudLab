@@ -1,0 +1,10 @@
+
+Name               Enabled LastLogon             Description
+----               ------- ---------             -----------
+Administrator        False                       Built-in account for administering the computer/domain
+DefaultAccount       False                       A user account managed by the system.
+Guest                False                       Built-in account for guest access to the computer/domain
+Philip                True 6/03/2026 8:13:19 pm  
+WDAGUtilityAccount   False                       A user account managed and used by the system for Windows Defender Application Guard scenarios.
+WsiAccount           False 16/10/2025 1:24:47 pm A user account managed and used by the system for Web Sign-in scenarios.
+
