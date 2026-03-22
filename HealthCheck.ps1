@@ -1,7 +1,7 @@
 # --- DISK SECTION ---
 Write-Host "Checking Disk Space on Root (/) Drive..." -ForegroundColor Yellow
 
-Get-PSDrive / | Select-Object Name, Used, Free
+Get-PSDrive / | Select-Object Name, @{Name="Used(GB)";Expression={[math]::Round($_.Used / 1GB, 2)}}, @{Name="Free(GB)";Expression={[math]::Round($_.Free / 1GB, 2)}} | Out-String
 
 # --- NETWORK SECTION ---
 Write-Host "Checking Network Interfaces..." -ForegroundColor Green
