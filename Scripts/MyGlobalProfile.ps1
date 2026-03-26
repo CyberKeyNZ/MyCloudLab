@@ -51,3 +51,38 @@ Set-Alias sync Invoke-LabSync
 # --- 6. Visual Customization ---
 Write-Host "PJ's CyberLab Loaded (PS v$($PSVersionTable.PSVersion))" -ForegroundColor Yellow
 Write-Host "Current Lab Root: $Global:CloudLabRoot" -ForegroundColor Gray
+
+function journal {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$Message
+    )
+    
+    $LogPath = "$Global:CloudLabRoot\Docs\Certification\SecurityPlus\Study_Log.md"
+    $Timestamp = Get-Date -Format "yyyy-MM-dd HH:mm"
+    
+    # Create the file with a header if it doesn't exist
+    if (-not (Test-Path $LogPath)) {
+        "# 📔 Security+ Study Log`n" | Out-File -FilePath $LogPath -Encoding utf8
+    }
+    
+    # Append the timestamped message
+    "- [$Timestamp] $Message" | Out-File -FilePath $LogPath -Append -Encoding utf8
+    
+    Write-Host "--- Logged to Study_Log.md ---" -ForegroundColor Yellow
+}
+function study {
+    Write-Host "🚀 Launching Security+ Study Environment..." -ForegroundColor Cyan
+    
+    # Define paths to your key files
+    $MesserNotes = "$Global:CloudLabRoot\Docs\Certification\SecurityPlus\ProfessorMesser\SY0-701_Video_Notes.md"
+    $DionExams   = "$Global:CloudLabRoot\Docs\Certification\SecurityPlus\DionTraining\Dion_Exam_Tracker.md"
+    $StudyLog    = "$Global:CloudLabRoot\Docs\Certification\SecurityPlus\Study_Log.md"
+    
+    # Open them all in VS Code tabs
+    code $MesserNotes
+    code $DionExams
+    code $StudyLog
+
+    Write-Host "✅ Study Vault Open. Good luck, PJ!" -ForegroundColor Green
+}
