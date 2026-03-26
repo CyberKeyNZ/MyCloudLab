@@ -51,3 +51,17 @@ NDA      Non-Disclosure Agreement                      A managerial/legal contro
 SLE      Single Loss Expectancy                        The cost of a single risk event (Asset Value x Exposure Factor).
 ALE      Annual Loss Expectancy                       The yearly cost of a risk (SLE x Annual Rate of Occurrence).
 SLA     Service Level Agreement                       "A contract defining the ""Availability"" a provider must maintain."
+
+---
+
+Port_Reference:
+Port----Protocol------Description-----------Security Tip
+20/21     FTP     File Transfer Protocol    Insecure. Sends data in cleartext.
+22        SSH     Secure Shell              The secure replacement for Telnet/FTP.
+23      Telnet    Remote Login              Red Flag! Never use in a secure network.
+25       SMTP     Simple Mail Transfer      Used for sending email.
+53       DNS      Domain Name System        Converts names to IP addresses.
+80       HTTP       Web Browsing             Insecure cleartext web traffic.
+443      HTTPS     Web (SSL/TLS)             Secure encrypted web traffic.
+143      IMAP      Email Retrieval           Receiving email (stays on server).
+3389      RDP      Remote Desktop            Windows remote access.
