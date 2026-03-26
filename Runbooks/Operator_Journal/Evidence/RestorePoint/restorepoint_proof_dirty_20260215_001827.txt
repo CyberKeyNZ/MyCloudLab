@@ -1,0 +1,18 @@
+# --- Operator Journal evidence (CloudLab) ---
+$EvidenceDir  = "D:\CloudLab\Runbooks\Operator_Journal\Evidence\RestorePoint"
+$EvidenceFile = Join-Path $EvidenceDir "restorepoint_proof.txt"
+
+function Write-Evidence {
+  param([string]$Result)
+  try {
+    if (-not (Test-Path -LiteralPath $EvidenceDir)) {
+      New-Item -ItemType Directory -Path $EvidenceDir -Force | Out-Null
+    }
+    $line = "{0} | HOST={1} | RESULT={2} | DESC={3} | TYPE={4}" -f `
+      (Get-Date -Format "yyyy-MM-dd HH:mm:ss"), $env:COMPUTERNAME, $Result, $Description, $RestorePointType
+    Add-Content -LiteralPath $EvidenceFile -Value $line -Encoding UTF8
+  } catch {
+    # Evidence write should never break the restore job
+  }
+}
+2026-02-15 00:11:35 | HOST=ASUS-DESKTOP1 | RESULT=Skipped (Recent restore point exists) | DESC=Weekly Restore Point | TYPE=MODIFY_SETTINGS

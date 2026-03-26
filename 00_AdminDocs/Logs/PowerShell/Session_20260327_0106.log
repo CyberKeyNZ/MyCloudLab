@@ -1,0 +1,24 @@
+**********************
+PowerShell transcript start
+Start time: 20260327010627
+Username: ASUS-DESKTOP1\Philip
+RunAs User: ASUS-DESKTOP1\Philip
+Configuration Name: 
+Machine: ASUS-DESKTOP1 (Microsoft Windows NT 10.0.26200.0)
+Host Application: D:\Apps\PowerShell117\7\pwsh.dll
+Process ID: 18992
+PSVersion: 7.6.0
+PSEdition: Core
+GitCommitId: 7.6.0
+OS: Microsoft Windows 10.0.26200
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is D:\CloudLab\00_AdminDocs\Logs\PowerShell\Session_20260327_0106.log
+PJ's CyberLab Loaded (PS v7.6.0)
+Current Lab Root: D:\CloudLab
+fatal: not a git repository (or any of the parent directories): .git
+PS7[ADMIN] D:\CloudLab>
