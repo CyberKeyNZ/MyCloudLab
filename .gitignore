@@ -1,0 +1,10 @@
+# Ignore all PowerShell Session Logs
+00_AdminDocs/Logs/
+
+# Ignore temporary Windows files
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Ignore VS Code settings folders (optional)
+.vscode/
